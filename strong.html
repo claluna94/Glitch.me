@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <title>UV Edge Cases Niki Niku Glitch</title>
+    <script src="https://j.staging7-wovn.com/1" data-wovnio="key=nSoRfH" async></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      body {
+        font-size: 1.5rem;
+        font-family: "Arial";
+      }
+    </style>
+  </head>
+  <body>
+    <section id="uv_edge_cases">
+      <header><h2>UV Edge Cases</h2></header>
+      <article id="uv_edge_cases__orphan_tags">
+        <header>
+          <h2>Orphaned inline tags</h2>
+          <div>
+            <span>Before image<img />After image</span>
+          </div>
+          <!-- Two UVs: "<span>Before image" "After image</span>" -->
+          <div>
+            <span>First<img />Second<img />Third<img />Fourth</span>
+          </div>
+          <div>
+            <span
+              >&lt;Entities before image&gt;<img />&lt;Entites after
+              image&gt;</span
+            >
+          </div>
+          <!-- Two UVs: "<span>&lt;Entities before image" "&lt;Entities after image&gt;</span>" -->
+          <div>
+            <span
+              >&lt;Entities first&gt;<img />&lt;Entites second&gt;<img />&lt;Entites
+              third&gt;</span
+            >
+          </div>
+        </header>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2>Nogizaka: Double Separator Block + Inline strong block</h2>
+      </header>
+      <section>
+        <span
+          >[If you select this and scroll, it will break]<img /><img />[You cannot highlight this 😭]<img /><img /><strong
+            >strong text is selectable tho</strong
+          ></span
+        >
+      </section>
+    </section>
+    <br/>
+    <br/>
+    <br/>
+    <section>
+      <div style="height: 800px">Long div to make page scrolling</div>
+    </section>
+  </body>
+</html>
