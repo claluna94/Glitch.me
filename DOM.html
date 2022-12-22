@@ -1,0 +1,28 @@
+<html>
+  <head>
+  <script src="https://j.staging7-wovn.com/1" data-wovnio="key=nSoRfH" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Hosts</title>
+   
+  </head>
+  <body>
+    <h1>Shadow DOM</h1>
+    
+    <div class="container">
+      <div>This is shadow uppper sibling ha</div>
+      <div id="shadow-host"></div>
+      <div>This is shadow lower sibling oi</div>
+    </div>
+    
+    <h2>Oi</h2>
+
+    <script>
+    window.onload = () => {
+      const shadowHost = document.querySelector('#shadow-host')
+      shadowHost.attachShadow({ mode: 'open' })
+      shadowHost.shadowRoot.innerHTML = '<p class="ignore">This is<strong> SHADOW ONE</strong></p><p>This is<strong> SHADOW TWO</strong></p>'
+    }
+    </script>
+  </body>
+</html>
